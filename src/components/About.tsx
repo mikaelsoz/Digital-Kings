@@ -1,8 +1,8 @@
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Zap, Users, Target, Crown } from 'lucide-react';
+import { Card } from './ui/Card';
 
 export const About = () => {
-  const shouldReduceMotion = useReducedMotion();
 
   const stats = [
     { value: '17K+', label: 'Membros' },
@@ -55,14 +55,13 @@ export const About = () => {
           className="grid grid-cols-3 gap-4 mb-16 max-w-xl mx-auto"
         >
           {stats.map((stat, i) => (
-            <div
-              key={i}
-              className="text-center p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm transition-all duration-300 hover:border-[#2F9EEC]/40 hover:shadow-[0_10px_40px_-20px_rgba(47,158,236,0.7)]"
-            >
-              <div className="text-2xl md:text-3xl font-bold text-[#2F9EEC] group-hover:scale-105 transition-transform">
-                {stat.value}
-              </div>
-              <div className="text-xs text-gray-400 uppercase tracking-wider mt-1">{stat.label}</div>
+            <div key={i}>
+              <Card className="text-center p-4 bg-white/5 border-white/10 hover:border-[#2F9EEC]/40" spotlight={false}>
+                <div className="text-2xl md:text-3xl font-bold text-[#2F9EEC] group-hover:scale-105 transition-transform">
+                  {stat.value}
+                </div>
+                <div className="text-xs text-gray-400 uppercase tracking-wider mt-1">{stat.label}</div>
+              </Card>
             </div>
           ))}
         </motion.div>
@@ -78,20 +77,16 @@ export const About = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.15 }}
-                whileHover={
-                  shouldReduceMotion ? undefined : { y: -8, rotateX: 4, rotateY: -4 }
-                }
-                whileTap={shouldReduceMotion ? undefined : { scale: 0.98 }}
-                style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
-                className="flex gap-5 group p-4 rounded-2xl bg-white/5 hover:bg-white/10 transition-all duration-300 border border-white/10 hover:border-[#2F9EEC]/30 shadow-lg shadow-black/10"
               >
-                <div className="flex-shrink-0 w-12 h-12 bg-[#2F9EEC]/10 rounded-xl flex items-center justify-center group-hover:bg-[#2F9EEC]/20 transition-colors border border-[#2F9EEC]/20">
-                  <item.icon className="w-5 h-5 text-[#2F9EEC]" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-white mb-1 group-hover:text-[#2F9EEC] transition-colors">{item.title}</h3>
-                  <p className="text-sm text-gray-400 leading-relaxed">{item.desc}</p>
-                </div>
+                <Card className="flex gap-5 p-4 bg-white/5 hover:bg-white/10 border-white/10 hover:border-[#2F9EEC]/30">
+                  <div className="flex-shrink-0 w-12 h-12 bg-[#2F9EEC]/10 rounded-xl flex items-center justify-center group-hover:bg-[#2F9EEC]/20 transition-colors border border-[#2F9EEC]/20">
+                    <item.icon className="w-5 h-5 text-[#2F9EEC]" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-1 group-hover:text-[#2F9EEC] transition-colors">{item.title}</h3>
+                    <p className="text-sm text-gray-400 leading-relaxed">{item.desc}</p>
+                  </div>
+                </Card>
               </motion.div>
             ))}
           </div>
@@ -107,7 +102,7 @@ export const About = () => {
             <div className="absolute -inset-4 bg-[#2F9EEC]/20 blur-3xl rounded-full opacity-50" />
 
             {/* Card */}
-            <div className="relative bg-gray-900/80 backdrop-blur-xl rounded-3xl p-6 border border-white/10 hover:border-[#2F9EEC]/30 transition-all duration-500">
+            <Card className="bg-gray-900/80 backdrop-blur-xl p-6 border-white/10 hover:border-[#2F9EEC]/30">
               {/* Header */}
               <div className="flex items-center gap-4 mb-6 pb-4 border-b border-white/10">
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#2F9EEC] to-blue-500 flex items-center justify-center">
@@ -136,16 +131,16 @@ export const About = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.3 + i * 0.1 }}
-                    className="flex items-center gap-3 p-3 rounded-xl bg-white/5 hover:bg-[#2F9EEC]/10 transition-colors cursor-pointer group"
+                    className="flex items-center gap-3 p-3 rounded-xl bg-white/5 hover:bg-[#2F9EEC]/10 transition-colors cursor-pointer group/channel"
                   >
                     <span className="text-lg">{channel.emoji}</span>
-                    <span className="text-gray-300 text-sm group-hover:text-[#2F9EEC] transition-colors">
+                    <span className="text-gray-300 text-sm group-hover/channel:text-[#2F9EEC] transition-colors">
                       {channel.name}
                     </span>
                   </motion.div>
                 ))}
               </div>
-            </div>
+            </Card>
           </motion.div>
         </div>
       </div>
