@@ -38,7 +38,7 @@ import { Card } from './ui/Card';
 
 const TestimonialCard = ({ text, author, role }: { text: string; author: string; role: string }) => {
   return (
-    <div className="flex-shrink-0 w-[350px] md:w-[400px] mx-3 h-full">
+    <div className="flex-shrink-0 w-[300px] sm:w-[350px] md:w-[400px] mx-3 h-full">
       <Card spotlight={false} className="h-full p-6 bg-gray-900/40 border-white/10 hover:border-[#2F9EEC]/40">
         <Quote className="w-8 h-8 text-[#2F9EEC]/40 mb-4 relative z-10" />
         <p className="text-gray-300 text-base leading-relaxed mb-6 group-hover:text-white transition-colors">

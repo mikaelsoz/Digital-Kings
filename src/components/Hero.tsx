@@ -82,7 +82,7 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-6xl md:text-7xl lg:text-8xl leading-[0.9] font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60 tracking-tighter select-none"
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.9] font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60 tracking-tighter select-none"
           >
             DIGITAL
           </motion.h1>
@@ -90,7 +90,7 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-6xl md:text-7xl lg:text-8xl leading-[0.9] font-black text-transparent bg-clip-text bg-gradient-to-t from-[#2F9EEC] to-blue-400/80 tracking-tighter select-none relative z-20"
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.9] font-black text-transparent bg-clip-text bg-gradient-to-t from-[#2F9EEC] to-blue-400/80 tracking-tighter select-none relative z-20"
           >
             KINGS
           </motion.h1>

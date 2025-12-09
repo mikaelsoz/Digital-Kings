@@ -110,7 +110,7 @@ export const CTA = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative p-12 md:p-16 rounded-[2.5rem] bg-gradient-to-br from-gray-900/80 to-gray-950/80 border border-white/10 backdrop-blur-xl"
+          className="relative p-8 md:p-16 rounded-[2.5rem] bg-gradient-to-br from-gray-900/80 to-gray-950/80 border border-white/10 backdrop-blur-xl"
         >
           {/* Inner Glow */}
           <div className="absolute inset-0 rounded-[2.5rem] bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-[#2F9EEC]/10 via-transparent to-transparent opacity-50" />
@@ -129,7 +129,7 @@ export const CTA = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
             >
               Pronto para se conectar?
             </motion.h2>
