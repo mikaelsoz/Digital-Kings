@@ -21,7 +21,7 @@ const FeatureItem = ({ icon: Icon, title, description, index, size = 'normal' }:
       transition={{ duration: 0.5, delay: index * 0.08 }}
       className={`h-full ${isLarge ? 'md:col-span-2' : ''}`}
     >
-      <Card className={`h-full ${isLarge ? 'p-8' : 'p-6'}`}>
+      <Card className={`h-full ${isLarge ? 'p-6 md:p-8' : 'p-5 md:p-6'}`}>
         <div className="flex flex-col h-full">
           <div className={`mb-4 ${isLarge ? 'w-14 h-14' : 'w-12 h-12'} rounded-2xl bg-[#2F9EEC]/10 flex items-center justify-center border border-[#2F9EEC]/20 group-hover:bg-[#2F9EEC]/20 group-hover:scale-110 transition-all duration-300`}>
             <Icon className={`${isLarge ? 'w-7 h-7' : 'w-5 h-5'} text-[#2F9EEC] group-hover:drop-shadow-[0_5px_20px_rgba(47,158,236,0.7)] transition-all duration-300`} />

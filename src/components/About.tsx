@@ -52,7 +52,7 @@ export const About = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="grid grid-cols-3 gap-4 mb-16 max-w-xl mx-auto"
+          className="grid grid-cols-3 gap-2 md:gap-4 mb-16 max-w-xl mx-auto"
         >
           {stats.map((stat, i) => (
             <div key={i}>
