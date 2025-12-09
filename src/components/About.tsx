@@ -56,7 +56,7 @@ export const About = () => {
         >
           {stats.map((stat, i) => (
             <div key={i}>
-              <Card className="text-center p-4 bg-white/5 border-white/10 hover:border-[#2F9EEC]/40" spotlight={false}>
+              <Card className="text-center p-4 border-white/10 hover:border-[#2F9EEC]/40" spotlight={false}>
                 <div className="text-2xl md:text-3xl font-bold text-[#2F9EEC] group-hover:scale-105 transition-transform">
                   {stat.value}
                 </div>
@@ -78,7 +78,7 @@ export const About = () => {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.15 }}
               >
-                <Card className="flex gap-5 p-4 bg-white/5 hover:bg-white/10 border-white/10 hover:border-[#2F9EEC]/30">
+                <Card className="flex gap-5 p-4 border-white/10 hover:border-[#2F9EEC]/30">
                   <div className="flex-shrink-0 w-12 h-12 bg-[#2F9EEC]/10 rounded-xl flex items-center justify-center group-hover:bg-[#2F9EEC]/20 transition-colors border border-[#2F9EEC]/20">
                     <item.icon className="w-5 h-5 text-[#2F9EEC]" />
                   </div>
@@ -102,7 +102,7 @@ export const About = () => {
             <div className="absolute -inset-4 bg-[#2F9EEC]/20 blur-3xl rounded-full opacity-50" />
 
             {/* Card */}
-            <Card className="bg-gray-900/80 backdrop-blur-xl p-6 border-white/10 hover:border-[#2F9EEC]/30">
+            <Card className="p-6 border-white/10 hover:border-[#2F9EEC]/30">
               {/* Header */}
               <div className="flex items-center gap-4 mb-6 pb-4 border-b border-white/10">
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#2F9EEC] to-blue-500 flex items-center justify-center">

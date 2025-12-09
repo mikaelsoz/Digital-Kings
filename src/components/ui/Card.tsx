@@ -63,7 +63,7 @@ export const Card = ({
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             style={motionStyle}
-            className={`group relative rounded-3xl border border-white/10 bg-gray-950 overflow-hidden transition-all duration-500 hover:border-[#2F9EEC]/30 hover:shadow-[0_25px_80px_-40px_rgba(47,158,236,0.5)] ${className}`}
+            className={`group relative rounded-3xl border border-white/10 bg-gradient-to-b from-gray-900 to-black overflow-hidden transition-all duration-500 hover:border-[#2F9EEC]/30 hover:shadow-[0_25px_80px_-40px_rgba(47,158,236,0.5)] ${className}`}
         >
             {/* Spotlight Effect */}
             {spotlight && (

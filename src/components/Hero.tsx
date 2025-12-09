@@ -139,7 +139,7 @@ export const Hero = () => {
               transition={{ delay: 0.6 + index * 0.1 }}
               className="group relative"
             >
-              <Card className="p-4 bg-white/5 border-white/10 hover:border-[#2F9EEC]/50">
+              <Card className="p-4 border-white/10 hover:border-[#2F9EEC]/50">
                 <div className="flex flex-col items-center relative z-10">
                   <stat.icon className="w-6 h-6 text-[#2F9EEC] mb-2 group-hover:scale-125 transition-transform duration-300 will-change-transform" />
                   <span className="text-2xl font-bold text-white mb-1">{stat.value}</span>

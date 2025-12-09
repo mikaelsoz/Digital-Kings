@@ -1,65 +1,11 @@
-import type React from 'react';
 import { useState } from 'react';
-import { motion, useMotionValue, useSpring, useReducedMotion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ArrowRight, Smartphone } from 'lucide-react';
 import { WhatsAppModal } from './WhatsAppModal';
 
-interface TiltCardProps {
-  title: string;
-  description: string;
-  badge?: string;
-}
+import { Card } from './ui/Card';
 
-const TiltCard = ({ title, description, badge }: TiltCardProps) => {
-  const shouldReduceMotion = useReducedMotion();
-  const rotateX = useMotionValue(0);
-  const rotateY = useMotionValue(0);
-  const springX = useSpring(rotateX, { stiffness: 160, damping: 15 });
-  const springY = useSpring(rotateY, { stiffness: 160, damping: 15 });
-
-  function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
-    if (shouldReduceMotion) return;
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 12;
-    const y = ((e.clientY - rect.top) / rect.height - 0.5) * -12;
-    rotateX.set(y);
-    rotateY.set(x);
-  }
-
-  function handleMouseLeave() {
-    if (shouldReduceMotion) return;
-    rotateX.set(0);
-    rotateY.set(0);
-  }
-
-  return (
-    <motion.div
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={
-        shouldReduceMotion
-          ? undefined
-          : { rotateX: springX, rotateY: springY, transformStyle: 'preserve-3d' }
-      }
-      className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-gray-900/80 to-gray-950/80 p-6"
-    >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(47,158,236,0.12),transparent_55%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      <div className="relative z-10 space-y-3">
-        {badge && (
-          <span className="inline-flex items-center gap-2 rounded-full bg-[#2F9EEC]/10 px-3 py-1 text-xs font-semibold text-[#2F9EEC] border border-[#2F9EEC]/30">
-            {badge}
-          </span>
-        )}
-        <h3 className="text-lg font-semibold text-white group-hover:text-[#2F9EEC] transition-colors">
-          {title}
-        </h3>
-        <p className="text-sm text-gray-400 leading-relaxed">
-          {description}
-        </p>
-      </div>
-    </motion.div>
-  );
-};
+/* Removed TiltCard component definition as we are using the unified Card component now */
 
 export const CTA = () => {
   const [isWhatsAppModalOpen, setIsWhatsAppModalOpen] = useState(false);
@@ -195,9 +141,23 @@ export const CTA = () => {
               <p className="text-[#2F9EEC] text-sm font-semibold uppercase tracking-[0.3em] text-center">
                 FAQ Rápido & Confiança
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4" style={{ perspective: '1200px' }}>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {faqs.map((item, index) => (
-                  <TiltCard key={index} title={item.title} description={item.description} badge={item.badge} />
+                  <Card key={index} className="p-6 text-left">
+                    <div className="space-y-3">
+                      {item.badge && (
+                        <span className="inline-flex items-center gap-2 rounded-full bg-[#2F9EEC]/10 px-3 py-1 text-xs font-semibold text-[#2F9EEC] border border-[#2F9EEC]/30">
+                          {item.badge}
+                        </span>
+                      )}
+                      <h3 className="text-lg font-semibold text-white group-hover:text-[#2F9EEC] transition-colors">
+                        {item.title}
+                      </h3>
+                      <p className="text-sm text-gray-400 leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
+                  </Card>
                 ))}
               </div>
               <div className="flex flex-col sm:flex-row gap-3 items-center justify-between text-sm text-gray-300 bg-white/5 border border-white/10 rounded-2xl px-5 py-4">

@@ -43,7 +43,7 @@ export const Rules = () => {
 
         {/* Discord Rules */}
         <section className="mb-12 sm:mb-16">
-          <Card className="mb-6 sm:mb-8 p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-gray-900 to-gray-800 border-gray-700/50">
+          <Card className="mb-6 sm:mb-8 p-4 sm:p-6 lg:p-8 border-gray-700/50">
             <div className="flex items-center space-x-3 mb-6">
               <MessageCircle className="w-6 h-6 sm:w-8 sm:h-8 text-[#2F9EEC]" />
               <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white">
@@ -100,7 +100,7 @@ export const Rules = () => {
           </Card>
 
           {/* Discord Promotion Rules */}
-          <Card className="p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-gray-900 to-gray-800 border-gray-700/50">
+          <Card className="p-4 sm:p-6 lg:p-8 border-gray-700/50">
             <div className="flex items-center space-x-3 mb-6">
               <Megaphone className="w-6 h-6 sm:w-8 sm:h-8 text-[#2F9EEC]" />
               <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white">
@@ -152,7 +152,7 @@ export const Rules = () => {
 
         {/* WhatsApp Rules */}
         <section className="mb-12 sm:mb-16">
-          <Card className="mb-6 sm:mb-8 p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-gray-900 to-gray-800 border-gray-700/50">
+          <Card className="mb-6 sm:mb-8 p-4 sm:p-6 lg:p-8 border-gray-700/50">
             <div className="flex items-center space-x-3 mb-6">
               <Smartphone className="w-6 h-6 sm:w-8 sm:h-8 text-[#2F9EEC]" />
               <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white">
