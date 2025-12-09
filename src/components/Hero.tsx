@@ -2,6 +2,7 @@ import { useState, useRef } from 'react';
 import { motion, useTransform, useSpring, useMotionValue, useReducedMotion } from 'framer-motion';
 import { Users, MessageCircle, Phone, ArrowRight, Crown } from 'lucide-react';
 import { WhatsAppModal } from './WhatsAppModal';
+import { Card } from './ui/Card';
 
 export const Hero = () => {
   const [isNetworkingModalOpen, setIsNetworkingModalOpen] = useState(false);
@@ -136,21 +137,15 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 + index * 0.1 }}
-              whileHover={
-                shouldReduceMotion
-                  ? undefined
-                  : { y: -8, rotateX: 4, rotateY: -4, scale: 1.02 }
-              }
-              whileTap={shouldReduceMotion ? undefined : { scale: 0.98 }}
-              style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
-              className="group relative p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-[#2F9EEC]/50 transition-all duration-400 shadow-lg shadow-black/20"
+              className="group relative"
             >
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-b from-white/5 via-transparent to-[#2F9EEC]/10 pointer-events-none rounded-xl" />
-              <div className="flex flex-col items-center relative z-10">
-                <stat.icon className="w-6 h-6 text-[#2F9EEC] mb-2 group-hover:scale-125 transition-transform duration-300 will-change-transform" />
-                <span className="text-2xl font-bold text-white mb-1">{stat.value}</span>
-                <span className="text-xs text-gray-400 uppercase tracking-wider">{stat.label}</span>
-              </div>
+              <Card className="p-4 bg-white/5 border-white/10 hover:border-[#2F9EEC]/50">
+                <div className="flex flex-col items-center relative z-10">
+                  <stat.icon className="w-6 h-6 text-[#2F9EEC] mb-2 group-hover:scale-125 transition-transform duration-300 will-change-transform" />
+                  <span className="text-2xl font-bold text-white mb-1">{stat.value}</span>
+                  <span className="text-xs text-gray-400 uppercase tracking-wider">{stat.label}</span>
+                </div>
+              </Card>
             </motion.div>
           ))}
         </div>

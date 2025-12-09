@@ -1,4 +1,4 @@
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Quote } from 'lucide-react';
 
 const testimonials = [
@@ -34,31 +34,27 @@ const testimonials = [
   },
 ];
 
+import { Card } from './ui/Card';
+
 const TestimonialCard = ({ text, author, role }: { text: string; author: string; role: string }) => {
-  const shouldReduceMotion = useReducedMotion();
   return (
-    <motion.div
-      whileHover={shouldReduceMotion ? undefined : { y: -8, rotateX: 3, rotateY: -3 }}
-      whileTap={shouldReduceMotion ? undefined : { scale: 0.98 }}
-      style={shouldReduceMotion ? undefined : { transformStyle: 'preserve-3d', perspective: 1000 }}
-      transition={{ type: 'spring', stiffness: 220, damping: 18 }}
-      className="flex-shrink-0 w-[350px] md:w-[400px] p-6 rounded-3xl bg-gray-900/80 border border-white/10 backdrop-blur-sm mx-3 hover:border-[#2F9EEC]/40 transition-all duration-300 group shadow-lg shadow-black/15"
-    >
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-[#2F9EEC]/8 via-transparent to-blue-500/10 pointer-events-none rounded-3xl" />
-      <Quote className="w-8 h-8 text-[#2F9EEC]/40 mb-4 relative z-10" />
-      <p className="text-gray-300 text-base leading-relaxed mb-6 group-hover:text-white transition-colors">
-        "{text}"
-      </p>
-      <div className="flex items-center gap-3">
-        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#2F9EEC] to-blue-500 flex items-center justify-center text-white font-bold">
-          {author.charAt(0)}
+    <div className="flex-shrink-0 w-[350px] md:w-[400px] mx-3 h-full">
+      <Card spotlight={false} className="h-full p-6 bg-gray-900/40 border-white/10 hover:border-[#2F9EEC]/40">
+        <Quote className="w-8 h-8 text-[#2F9EEC]/40 mb-4 relative z-10" />
+        <p className="text-gray-300 text-base leading-relaxed mb-6 group-hover:text-white transition-colors">
+          "{text}"
+        </p>
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#2F9EEC] to-blue-500 flex items-center justify-center text-white font-bold">
+            {author.charAt(0)}
+          </div>
+          <div>
+            <p className="text-white font-semibold text-sm">{author}</p>
+            <p className="text-gray-500 text-xs">{role}</p>
+          </div>
         </div>
-        <div>
-          <p className="text-white font-semibold text-sm">{author}</p>
-          <p className="text-gray-500 text-xs">{role}</p>
-        </div>
-      </div>
-    </motion.div>
+      </Card>
+    </div>
   );
 };
 

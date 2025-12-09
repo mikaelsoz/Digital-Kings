@@ -1,5 +1,6 @@
-import React from 'react';
+
 import { Crown, Shield, MessageCircle, Smartphone, AlertTriangle, Users, Megaphone } from 'lucide-react';
+import { Card } from './ui/Card';
 
 export const Rules = () => {
   return (
@@ -14,7 +15,7 @@ export const Rules = () => {
               </div>
               <span className="text-lg sm:text-2xl font-bold text-white">Digital Kings</span>
             </a>
-            <a 
+            <a
               href="/"
               className="px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium text-white bg-gray-800 hover:bg-[#2F9EEC] rounded-lg transition-colors duration-300"
             >
@@ -42,14 +43,14 @@ export const Rules = () => {
 
         {/* Discord Rules */}
         <section className="mb-12 sm:mb-16">
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-4 sm:p-6 lg:p-8 border border-gray-700/50 mb-6 sm:mb-8">
+          <Card className="mb-6 sm:mb-8 p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-gray-900 to-gray-800 border-gray-700/50">
             <div className="flex items-center space-x-3 mb-6">
               <MessageCircle className="w-6 h-6 sm:w-8 sm:h-8 text-[#2F9EEC]" />
               <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white">
                 🤬 Ofensas e Conteúdos Proibidos (Discord)
               </h2>
             </div>
-            
+
             <div className="space-y-3 sm:space-y-4 text-sm sm:text-base text-gray-300">
               <div className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-[#2F9EEC] rounded-full mt-2 flex-shrink-0"></div>
@@ -96,17 +97,17 @@ export const Rules = () => {
                 <p>Modificadores de voz e áudios estourados são permitidos apenas na sala 🥂・Resenha.</p>
               </div>
             </div>
-          </div>
+          </Card>
 
           {/* Discord Promotion Rules */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-4 sm:p-6 lg:p-8 border border-gray-700/50">
+          <Card className="p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-gray-900 to-gray-800 border-gray-700/50">
             <div className="flex items-center space-x-3 mb-6">
               <Megaphone className="w-6 h-6 sm:w-8 sm:h-8 text-[#2F9EEC]" />
               <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white">
                 📢 Regras de Divulgação (Discord)
               </h2>
             </div>
-            
+
             <div className="space-y-3 sm:space-y-4 text-sm sm:text-base text-gray-300">
               <div className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-[#2F9EEC] rounded-full mt-2 flex-shrink-0"></div>
@@ -146,19 +147,19 @@ export const Rules = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </Card>
         </section>
 
         {/* WhatsApp Rules */}
         <section className="mb-12 sm:mb-16">
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-4 sm:p-6 lg:p-8 border border-gray-700/50 mb-6 sm:mb-8">
+          <Card className="mb-6 sm:mb-8 p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-gray-900 to-gray-800 border-gray-700/50">
             <div className="flex items-center space-x-3 mb-6">
               <Smartphone className="w-6 h-6 sm:w-8 sm:h-8 text-[#2F9EEC]" />
               <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white">
                 ⚠ Regras dos Grupos de WhatsApp
               </h2>
             </div>
-            
+
             <div className="space-y-3 sm:space-y-4 text-sm sm:text-base text-gray-300">
               <div className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-[#2F9EEC] rounded-full mt-2 flex-shrink-0"></div>
@@ -202,17 +203,17 @@ export const Rules = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </Card>
 
           {/* Service Promotion WhatsApp Rules */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-4 sm:p-6 lg:p-8 border border-gray-700/50">
+          <Card className="p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-gray-900 to-gray-800 border-gray-700/50">
             <div className="flex items-center space-x-3 mb-6">
               <Users className="w-6 h-6 sm:w-8 sm:h-8 text-[#2F9EEC]" />
               <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white">
                 📋 Regras do Grupo de Divulgação de Serviços (WhatsApp)
               </h2>
             </div>
-            
+
             <div className="space-y-3 sm:space-y-4 text-sm sm:text-base text-gray-300">
               <div className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-[#2F9EEC] rounded-full mt-2 flex-shrink-0"></div>
@@ -239,7 +240,7 @@ export const Rules = () => {
                 <p>Atos criminosos ou quebra de regras levarão ao banimento sem aviso.</p>
               </div>
             </div>
-          </div>
+          </Card>
         </section>
 
         {/* Call to Action */}
